@@ -1,0 +1,891 @@
+             pestpp-sen: a tool for global sensitivity analysis
+
+                         by The PEST++ Development Team
+
+
+
+version: 5.1.24
+binary compiled on Oct  7 2022 at 02:40:30
+
+using control file: "case"
+in directory: "/ccc/scratch/cont002/dam/jeannotb/GSA/PESTPP_inversion_parallele/manager"
+on host: "topaze7024"
+
+started at 10/12/22 16:51:03
+...reading external file 'case.pargp_data.csv'
+...header line: PARGPNME,INCTYP,DERINC,DERINCLB,FORCEN,DERINCMUL,DERMTHD,SPLITTHRESH,SPLITRELDIFF,SPLITACTION,EXTRA
+... skipping comment line in external file:
+
+...read 10 lines from external file
+...reading external file 'case.par_data.csv'
+...header line: PARNME,PARTRANS,PARCHGLIM,PARVAL1,PARLBND,PARUBND,PARGP,SCALE,OFFSET,DERCOM
+...read 12 lines from external file
+...reading external file 'case.obs_data.csv'
+...header line: OBSNME,OBSVAL,WEIGHT,OBGNME,STANDARD_DEVIATION,T
+...read 532 lines from external file
+...reading external file 'case.tplfile_data.csv'
+...header line: PEST_FILE,MODEL_FILE
+...read 5 lines from external file
+...reading external file 'case.insfile_data.csv'
+...header line: PEST_FILE,MODEL_FILE
+...read 2 lines from external file
+
+using control file: "case"
+
+    This software has been approved for release by the
+    U.S.Geological Survey(USGS).Although the software has 
+    been subjected to rigorous review, the USGS reserves the
+    right to update the software as needed pursuant to further
+    analysisand review.No warranty, expressed or implied, is 
+    made by the USGS or the U.S.Government as to the
+    functionality of the softwareand related material nor shall
+    the fact of release constitute any such warranty.
+    Furthermore, the software is released on condition that
+    neither the USGS nor the U.S.Government shall be held
+    liable for any damages resulting from its authorized 
+    or unauthorized use.
+
+
+pestmode:- 
+   estimation
+
+
+Case dimensions:- 
+    Number of parameters = 11
+    Number of adjustable parameters = 11
+    Number of observations = 531
+    Number of prior estimates = 0
+
+PEST Control Information
+    relparmax = 1
+    facparmax = 1.1
+    facorig = 0.001
+    phiredswh = 0.1
+    noptmax = 50
+    phiredstp = 0.01
+    nphistp = 3
+    nphinored = 3
+    relparstp = 0.01
+    nrelpar = 3
+
+
+    PEST++ OPTIONS: 
+
+...general options (used in multiple tools): 
+svd_pack: redsvd
+lambda_scale_fac: 0.75,1,1.1,
+forgive_unknown_args: 0
+max_run_fail: 1
+panther_poll_interval: 1
+parameter_covariance: 
+observation_covariance: 
+hotstart_resfile: 
+overdue_resched_fac: 1.15
+overdue_giveup_fac: 100
+overdue_giveup_minutes: 1e+30
+condor_submit_file: 
+tie_by_group: 0
+par_sigma_range: 4
+enforce_tied_bounds: 0
+debug_parse_only: 0
+check_tplins: 1
+fill_tpl_zeros: 0
+tpl_force_decimal: 0
+additional_ins_delimiters: 
+random_seed: 358183147
+num_tpl_ins_threads: 1
+save_binary: 0
+ensemble_output_precision: 6
+panther_echo: 1
+panther_agent_restart_on_error: 0
+panther_agent_no_ping_timeout_secs: -1
+panther_debug_loop: 0
+debug_check_par_en_consistency: 0
+panther_agent_freeze_on_fail: 0
+panther_transfer_on_finish: 
+panther_transfer_on_fail: 
+
+...pestpp-glm specific options:
+max_n_super: 1000000
+super_eigthresh: 1e-06
+n_iter_base: 1000000
+n_iter_super: 0
+super_relparmax: 0.1
+max_super_frz_iter: 20
+max_reg_iter: 20
+lambdas: 0.1,1,10,100,1000,
+iteration_summary: 1
+der_forgive: 1
+uncertainty: 1
+forecasts: 
+base_jacobian: 
+glm_num_reals: 0
+jac_scale: 1
+glm_normal_form: DIAG
+glm_debug_der_fail: 0
+glm_debug_lamb_fail: 0
+glm_debug_real_fail: 0
+glm_accept_mc_phi: 0
+glm_rebase_super: 0
+glm_iter_mc: 0
+glm_high_2nd_iter_phi: 0
+
+...pestpp-swp options:
+sweep_parameter_csv_file: 
+sweep_output_csv_file: sweep_out.csv
+sweep_chunk: 500
+sweep_forgive: 0
+sweep_base_run: 0
+sweep_include_regul_phi: 0
+
+...pestpp-opt options:
+opt_objective_function: 
+opt_coin_log: 1
+opt_skip_final: 0
+opt_std_weights: 0
+opt_stack_size: 0
+opt_par_stack: 
+opt_obs_stack: 
+opt_decision_variable_groups: 
+opt_external_variable_groups: 
+opt_constraint_groups: 
+opt_risk: 0.5
+opt_iter_derinc_fac: 1
+opt_direction: 1
+opt_iter_tol: 0.001
+opt_recalc_fosm_every: 1
+opt_chance_points: SINGLE
+
+...pestpp-sqp options:
+sqp_dv_en: 
+sqp_obs_restart_en: 
+sqp_num_reals: -1
+sqp_update_hessian: 0
+sqp_scale_facs:
+  1e-05
+  0.0001
+  0.001
+  0.005
+  0.01
+  0.05
+  0.075
+  0.1
+  0.25
+  0.5
+  1
+
+...pestpp-mou options:
+mou_generator: DE
+mou_population_size: 100
+mou_dv_population_file: 
+mou_obs_population_restart_file: 
+mou_objectives: 
+mou_max_archive_size: 500
+mou_risk_objective: 0
+mou_verbose_level: 1
+mou_env_selector: NSGA
+mou_mating_selector: TOURNAMENT
+mou_crossover_prob: 0.75
+mou_mutation_prob: -999
+mou_de_f: 0.8
+mou_save_population_every: -1
+mou_pso_omega: 0.7
+mou_pso_social_const: 2
+mou_pso_cognitive: 2
+mou_population_schedule: 
+mou_simplex_reflections:10
+mou_simplex_factors: 
+ 0.5
+ 0.6
+ 0.7
+ 0.8
+mou_simplex_mutation: 0
+
+...shared pestpp-ies/pestpp-da options:
+(note: 'da' args override 'ies' args when using pestpp-da)
+ies_parameter_ensemble: 
+ies_observation_ensemble: 
+ies_weights_ensemble: 
+ies_restart_parameter_ensemble: 
+ies_restart_observation_ensemble: 
+ies_use_approximate_solution: 1
+ies_lambda_mults: 0.1,1,10,
+ies_initial_lambda: 0
+ies_use_approx: 1
+ies_subset_size: 4
+ies_reg_factor: 0
+ies_verbose_level: 1
+ies_use_prior_scaling: 0
+ies_num_reals: 50
+ies_bad_phi: 1e+300
+ies_bad_phi_sigma: 1e+300
+ies_include_base: 1
+ies_use_empirical_prior: 0
+ies_group_draws: 1
+ies_enforce_bounds: 1
+ies_localizer: 
+ies_accept_phi_fac: 1.05
+ies_lambda_inc_fac: 10
+ies_lambda_dec_fac: 0.75
+ies_save_lambda_ensembles: 0
+ies_subset_how: RANDOM
+ies_localize_how: PARAMETERS
+ies_num_threads: -1
+ies_debug_fail_subset: 0
+ies_debug_fail_remainder: 0
+ies_debug_bad_phi: 0
+ies_debug_upgrade_only: 0
+ies_debug_high_subset_phi: 0
+ies_debug_high_upgrade_phi: 0
+ies_csv_by_reals: 1
+ies_autoadaloc: 0
+ies_autoadaloc_sigma_dist: 1
+ies_enforce_chglim: 0
+ies_center_on: 
+ies_no_noise: 0
+ies_drop_conflicts: 0
+ies_save_rescov:0
+ies_pdc_sigma_distance: -1
+ies_use_mda: 0
+ies_mda_init_fac: 10
+ies_mda_dec_fac: 0.5
+ies_localization_type: LOCAL
+ies_upgrades_in_memory: 1
+ies_ordered_binary: 1
+ies_multimodal_alpha: 1
+ies_localizer_forgive_extra: 0
+ies_phi_fractions_file: 
+
+pestpp-sen options: 
+gsa_method: SOBOL
+gsa_morris_pooled_obs: 0
+gsa_morris_obs_sen: 1
+gsa_morris_p: 4
+gsa_morris_r: 10
+gsa_morris_delta: 0.6666
+gsa_sobol_samples: 100000
+gsa_sobol_par_dist: UNIF
+
+pestpp-da options (those not shared with pestpp-ies):
+da_parameter_cycle_table: 
+da_observation_cycle_table: 
+da_hotstart_cycle: 0
+da_stop_cycle: 1000000000
+da_use_simulated_states: 1
+da_noptmax_schedule: 
+
+
+
+Model command line(s):- 
+    python3 NIDMOW.py Test_case
+
+Model interface files:-
+    template files:
+      Test_case/Inputs/PEST_Template_files/T_params_fractures.txt
+      Test_case/Inputs/PEST_Template_files/T_params_matrix.txt
+      Test_case/Inputs/PEST_Template_files/T_params_well.txt
+      Test_case/Inputs/PEST_Template_files/T_settings_NIDMOWR.txt
+    model input files:
+      Test_case/Inputs/params_fractures.txt
+      Test_case/Inputs/params_matrix.txt
+      Test_case/Inputs/params_well.txt
+      Test_case/Inputs/settings_NIDMOWR.txt
+
+    instruction files:
+      /Test_case/Outputs/PEST_instruction_files/I_zw.txt
+    model output files:
+      /Test_case/Outputs/zw.txt
+
+
+Parameter group information
+NAME          INCREMENT TYPE     DERIVATIVE INCREMENT    INCREMENT LOWER BOUND  FORCE CENTRAL     INCREMENT MULTIPLIER
+ks                  RELATIVE                     0.01                        0       ALWAYS_3                        2
+n                   RELATIVE                     0.01                        0       ALWAYS_3                        2
+alpha               RELATIVE                     0.01                        0       ALWAYS_3                        2
+gzbot_f             RELATIVE                     0.01                        0       ALWAYS_3                        2
+grdrill             RELATIVE                     0.01                        0       ALWAYS_3                        2
+gwdrill             RELATIVE                     0.01                        0       ALWAYS_3                        2
+gdeltae             RELATIVE                     0.01                        0       ALWAYS_3                        2
+gepsilon            RELATIVE                     0.01                        0       ALWAYS_3                        2
+
+
+
+Parameter information
+NAME         TRANSFORMATION        CHANGE LIMIT  INITIAL VALUE    LOWER BOUND    UPPER BOUND        GROUP          SCALE         OFFSET  DERIVATIVE COMMAND
+ksf          log                     FACTOR          1e-05          5e-06          0.005           ks              1              0                   1
+ksm          log                     FACTOR          1e-07          1e-09          1e-06           ks              1              0                   1
+nf           none                  RELATIVE              2            1.2            2.5            n              1              0                   1
+nm           none                  RELATIVE              2            1.2            2.5            n              1              0                   1
+alphaf       none                  RELATIVE             10              2             20        alpha              1              0                   1
+alpham       none                  RELATIVE              2            0.5              4        alpha              1              0                   1
+zbot_f       none                  RELATIVE             15              5             20      gzbot_f              1              0                   1
+rdrill       none                  RELATIVE           0.31           0.21           0.41      grdrill              1              0                   1
+wdrill       none                  RELATIVE            0.4            0.1           0.45      gwdrill              1              0                   1
+deltae       none                  RELATIVE            0.1           0.01            0.2      gdeltae              1              0                   1
+epsilon      log                     FACTOR          1e-05          1e-06           0.01     gepsilon              1              0                   1
+
+
+
+Observation information
+NAME                                VALUE                GROUP              WEIGHT
+zw_0                                   10                   zw                   1
+zw_360                            10.0002                   zw                   1
+zw_720                            10.0004                   zw                   1
+zw_1080                           10.0007                   zw                   1
+zw_1440                            10.001                   zw                   1
+zw_1800                           10.0015                   zw                   1
+zw_2160                            10.002                   zw                   1
+zw_2520                           10.0026                   zw                   1
+zw_2880                           10.0033                   zw                   1
+zw_3240                           10.0041                   zw                   1
+zw_3600                            10.005                   zw                   1
+zw_3960                           10.0059                   zw                   1
+zw_4320                            10.007                   zw                   1
+zw_4680                           10.0081                   zw                   1
+zw_5040                           10.0093                   zw                   1
+zw_5400                           10.0105                   zw                   1
+zw_5760                           10.0119                   zw                   1
+zw_6120                           10.0133                   zw                   1
+zw_6480                           10.0148                   zw                   1
+zw_6840                           10.0164                   zw                   1
+zw_7200                            10.018                   zw                   1
+zw_7560                           10.0198                   zw                   1
+zw_7920                           10.0216                   zw                   1
+zw_8280                           10.0235                   zw                   1
+zw_8640                           10.0254                   zw                   1
+zw_9000                           10.0275                   zw                   1
+zw_9360                           10.0296                   zw                   1
+zw_9720                           10.0318                   zw                   1
+zw_10080                          10.0341                   zw                   1
+zw_10440                          10.0364                   zw                   1
+zw_10800                          10.0388                   zw                   1
+zw_11160                          10.0413                   zw                   1
+zw_11520                          10.0439                   zw                   1
+zw_11880                          10.0466                   zw                   1
+zw_12240                          10.0493                   zw                   1
+zw_12600                          10.0521                   zw                   1
+zw_12960                           10.055                   zw                   1
+zw_13320                          10.0579                   zw                   1
+zw_13680                          10.0609                   zw                   1
+zw_14040                           10.064                   zw                   1
+zw_14400                          10.0672                   zw                   1
+zw_14760                          10.0705                   zw                   1
+zw_15120                          10.0738                   zw                   1
+zw_15480                          10.0772                   zw                   1
+zw_15840                          10.0806                   zw                   1
+zw_16200                          10.0842                   zw                   1
+zw_16560                          10.0878                   zw                   1
+zw_16920                          10.0915                   zw                   1
+zw_17280                          10.0952                   zw                   1
+zw_17640                          10.0991                   zw                   1
+zw_18000                           10.103                   zw                   1
+zw_18360                          10.1069                   zw                   1
+zw_18720                          10.1111                   zw                   1
+zw_19080                          10.1172                   zw                   1
+zw_19440                           10.128                   zw                   1
+zw_19800                          10.1457                   zw                   1
+zw_20160                          10.1726                   zw                   1
+zw_20520                          10.2107                   zw                   1
+zw_20880                           10.262                   zw                   1
+zw_21240                          10.3283                   zw                   1
+zw_21600                          10.4112                   zw                   1
+zw_21960                           10.512                   zw                   1
+zw_22320                          10.6323                   zw                   1
+zw_22680                          10.7731                   zw                   1
+zw_23040                          10.9355                   zw                   1
+zw_23400                          11.1204                   zw                   1
+zw_23760                          11.3284                   zw                   1
+zw_24120                          11.5602                   zw                   1
+zw_24480                          11.8162                   zw                   1
+zw_24840                          12.0965                   zw                   1
+zw_25200                          12.4012                   zw                   1
+zw_25560                          12.7302                   zw                   1
+zw_25920                          13.0832                   zw                   1
+zw_26280                          13.4598                   zw                   1
+zw_26640                          13.8593                   zw                   1
+zw_27000                          14.2809                   zw                   1
+zw_27360                          14.7239                   zw                   1
+zw_27720                          15.1792                   zw                   1
+zw_28080                            15.58                   zw                   1
+zw_28440                          15.8919                   zw                   1
+zw_28800                            16.12                   zw                   1
+zw_29160                          16.2847                   zw                   1
+zw_29520                          16.4064                   zw                   1
+zw_29880                           16.501                   zw                   1
+zw_30240                           16.579                   zw                   1
+zw_30600                          16.6469                   zw                   1
+zw_30960                          16.7087                   zw                   1
+zw_31320                          16.7667                   zw                   1
+zw_31680                          16.8221                   zw                   1
+zw_32040                          16.8757                   zw                   1
+zw_32400                          16.9279                   zw                   1
+zw_32760                          16.9789                   zw                   1
+zw_33120                          17.0289                   zw                   1
+zw_33480                          17.0781                   zw                   1
+zw_33840                          17.1263                   zw                   1
+zw_34200                          17.1737                   zw                   1
+zw_34560                          17.2204                   zw                   1
+zw_34920                          17.2662                   zw                   1
+zw_35280                          17.3114                   zw                   1
+zw_35640                          17.3558                   zw                   1
+zw_36000                          17.3996                   zw                   1
+zw_36360                          17.4427                   zw                   1
+zw_36720                          17.4852                   zw                   1
+zw_37080                           17.527                   zw                   1
+zw_37440                          17.5682                   zw                   1
+zw_37800                          17.6088                   zw                   1
+zw_38160                          17.6488                   zw                   1
+zw_38520                          17.6883                   zw                   1
+zw_38880                          17.7272                   zw                   1
+zw_39240                          17.7655                   zw                   1
+zw_39600                          17.8033                   zw                   1
+zw_39960                          17.8406                   zw                   1
+zw_40320                          17.8774                   zw                   1
+zw_40680                          17.9136                   zw                   1
+zw_41040                          17.9494                   zw                   1
+zw_41400                          17.9847                   zw                   1
+zw_41760                          18.0195                   zw                   1
+zw_42120                          18.0538                   zw                   1
+zw_42480                          18.0877                   zw                   1
+zw_42840                          18.1211                   zw                   1
+zw_43200                          18.1541                   zw                   1
+zw_43560                          18.1867                   zw                   1
+zw_43920                          18.2188                   zw                   1
+zw_44280                          18.2505                   zw                   1
+zw_44640                          18.2818                   zw                   1
+zw_45000                          18.3127                   zw                   1
+zw_45360                          18.3432                   zw                   1
+zw_45720                          18.3733                   zw                   1
+zw_46080                          18.4031                   zw                   1
+zw_46440                          18.4324                   zw                   1
+zw_46800                          18.4614                   zw                   1
+zw_47160                            18.49                   zw                   1
+zw_47520                          18.5182                   zw                   1
+zw_47880                          18.5461                   zw                   1
+zw_48240                          18.5737                   zw                   1
+zw_48600                          18.6008                   zw                   1
+zw_48960                          18.6277                   zw                   1
+zw_49320                          18.6542                   zw                   1
+zw_49680                          18.6804                   zw                   1
+zw_50040                          18.7063                   zw                   1
+zw_50400                          18.7319                   zw                   1
+zw_50760                          18.7571                   zw                   1
+zw_51120                          18.7821                   zw                   1
+zw_51480                          18.8067                   zw                   1
+zw_51840                          18.8311                   zw                   1
+zw_52200                          18.8551                   zw                   1
+zw_52560                          18.8789                   zw                   1
+zw_52920                          18.9024                   zw                   1
+zw_53280                          18.9256                   zw                   1
+zw_53640                          18.9485                   zw                   1
+zw_54000                          18.9711                   zw                   1
+zw_54360                          18.9935                   zw                   1
+zw_54720                          19.0156                   zw                   1
+zw_55080                          19.0375                   zw                   1
+zw_55440                          19.0591                   zw                   1
+zw_55800                          19.0805                   zw                   1
+zw_56160                          19.1016                   zw                   1
+zw_56520                          19.1225                   zw                   1
+zw_56880                          19.1431                   zw                   1
+zw_57240                          19.1635                   zw                   1
+zw_57600                          19.1836                   zw                   1
+zw_57960                          19.2036                   zw                   1
+zw_58320                          19.2233                   zw                   1
+zw_58680                          19.2428                   zw                   1
+zw_59040                           19.262                   zw                   1
+zw_59400                          19.2811                   zw                   1
+zw_59760                          19.2999                   zw                   1
+zw_60120                          19.3185                   zw                   1
+zw_60480                          19.3369                   zw                   1
+zw_60840                          19.3552                   zw                   1
+zw_61200                          19.3732                   zw                   1
+zw_61560                           19.391                   zw                   1
+zw_61920                          19.4086                   zw                   1
+zw_62280                           19.426                   zw                   1
+zw_62640                          19.4432                   zw                   1
+zw_63000                          19.4602                   zw                   1
+zw_63360                          19.4771                   zw                   1
+zw_63720                          19.4937                   zw                   1
+zw_64080                          19.5102                   zw                   1
+zw_64440                          19.5265                   zw                   1
+zw_64800                          19.5017                   zw                   1
+zw_65160                          19.4249                   zw                   1
+zw_65520                          19.3337                   zw                   1
+zw_65880                          19.2392                   zw                   1
+zw_66240                          19.1446                   zw                   1
+zw_66600                          19.0508                   zw                   1
+zw_66960                           18.958                   zw                   1
+zw_67320                          18.8664                   zw                   1
+zw_67680                          18.7759                   zw                   1
+zw_68040                          18.6866                   zw                   1
+zw_68400                          18.5983                   zw                   1
+zw_68760                          18.5112                   zw                   1
+zw_69120                          18.4251                   zw                   1
+zw_69480                          18.3401                   zw                   1
+zw_69840                          18.2561                   zw                   1
+zw_70200                          18.1731                   zw                   1
+zw_70560                          18.0912                   zw                   1
+zw_70920                          18.0102                   zw                   1
+zw_71280                          17.9303                   zw                   1
+zw_71640                          17.8513                   zw                   1
+zw_72000                          17.7733                   zw                   1
+zw_72360                          17.6962                   zw                   1
+zw_72720                          17.6201                   zw                   1
+zw_73080                          17.5448                   zw                   1
+zw_73440                          17.4705                   zw                   1
+zw_73800                           17.397                   zw                   1
+zw_74160                          17.3245                   zw                   1
+zw_74520                          17.2527                   zw                   1
+zw_74880                          17.1818                   zw                   1
+zw_75240                          17.1117                   zw                   1
+zw_75600                          17.0425                   zw                   1
+zw_75960                          16.9739                   zw                   1
+zw_76320                          16.9062                   zw                   1
+zw_76680                          16.8392                   zw                   1
+zw_77040                          16.7729                   zw                   1
+zw_77400                          16.7072                   zw                   1
+zw_77760                          16.6423                   zw                   1
+zw_78120                           16.578                   zw                   1
+zw_78480                          16.5142                   zw                   1
+zw_78840                          16.4511                   zw                   1
+zw_79200                          16.3885                   zw                   1
+zw_79560                          16.3265                   zw                   1
+zw_79920                          16.2649                   zw                   1
+zw_80280                          16.2037                   zw                   1
+zw_80640                           16.143                   zw                   1
+zw_81000                          16.0825                   zw                   1
+zw_81360                          16.0224                   zw                   1
+zw_81720                          15.9625                   zw                   1
+zw_82080                          15.9028                   zw                   1
+zw_82440                          15.8432                   zw                   1
+zw_82800                          15.7835                   zw                   1
+zw_83160                          15.7238                   zw                   1
+zw_83520                          15.6638                   zw                   1
+zw_83880                          15.6034                   zw                   1
+zw_84240                          15.5424                   zw                   1
+zw_84600                          15.4807                   zw                   1
+zw_84960                           15.418                   zw                   1
+zw_85320                          15.3538                   zw                   1
+zw_85680                          15.2878                   zw                   1
+zw_86040                          15.2194                   zw                   1
+zw_86400                          15.1479                   zw                   1
+zw_86760                           15.072                   zw                   1
+zw_87120                          14.9904                   zw                   1
+zw_87480                          14.9031                   zw                   1
+zw_87840                          14.8113                   zw                   1
+zw_88200                          14.7162                   zw                   1
+zw_88560                          14.6188                   zw                   1
+zw_88920                          14.5201                   zw                   1
+zw_89280                           14.421                   zw                   1
+zw_89640                          14.3223                   zw                   1
+zw_90000                          14.2249                   zw                   1
+zw_90360                          14.1293                   zw                   1
+zw_90720                          14.0363                   zw                   1
+zw_91080                          13.9463                   zw                   1
+zw_91440                            13.86                   zw                   1
+zw_91800                          13.7775                   zw                   1
+zw_92160                          13.6987                   zw                   1
+zw_92520                          13.6233                   zw                   1
+zw_92880                          13.5512                   zw                   1
+zw_93240                          13.4822                   zw                   1
+zw_93600                          13.4162                   zw                   1
+zw_93960                           13.353                   zw                   1
+zw_94320                          13.2925                   zw                   1
+zw_94680                          13.2345                   zw                   1
+zw_95040                           13.179                   zw                   1
+zw_95400                          13.1258                   zw                   1
+zw_95760                          13.0748                   zw                   1
+zw_96120                          13.0259                   zw                   1
+zw_96480                           12.979                   zw                   1
+zw_96840                          12.9341                   zw                   1
+zw_97200                           12.891                   zw                   1
+zw_97560                          12.8496                   zw                   1
+zw_97920                          12.8099                   zw                   1
+zw_98280                          12.7719                   zw                   1
+zw_98640                          12.7353                   zw                   1
+zw_99000                          12.7002                   zw                   1
+zw_99360                          12.6666                   zw                   1
+zw_99720                          12.6342                   zw                   1
+zw_100080                         12.6032                   zw                   1
+zw_100440                         12.5734                   zw                   1
+zw_100800                         12.5448                   zw                   1
+zw_101160                         12.5173                   zw                   1
+zw_101520                         12.4909                   zw                   1
+zw_101880                         12.4655                   zw                   1
+zw_102240                         12.4411                   zw                   1
+zw_102600                         12.4177                   zw                   1
+zw_102960                         12.3952                   zw                   1
+zw_103320                         12.3736                   zw                   1
+zw_103680                         12.3529                   zw                   1
+zw_104040                          12.333                   zw                   1
+zw_104400                         12.3138                   zw                   1
+zw_104760                         12.2954                   zw                   1
+zw_105120                         12.2777                   zw                   1
+zw_105480                         12.2607                   zw                   1
+zw_105840                         12.2444                   zw                   1
+zw_106200                         12.2287                   zw                   1
+zw_106560                         12.2136                   zw                   1
+zw_106920                         12.1991                   zw                   1
+zw_107280                         12.1852                   zw                   1
+zw_107640                         12.1718                   zw                   1
+zw_108000                          12.159                   zw                   1
+zw_108360                         12.1466                   zw                   1
+zw_108720                         12.1348                   zw                   1
+zw_109080                         12.1234                   zw                   1
+zw_109440                         12.1124                   zw                   1
+zw_109800                         12.1019                   zw                   1
+zw_110160                         12.0918                   zw                   1
+zw_110520                         12.0821                   zw                   1
+zw_110880                         12.0728                   zw                   1
+zw_111240                         12.0639                   zw                   1
+zw_111600                         12.0553                   zw                   1
+zw_111960                          12.047                   zw                   1
+zw_112320                         12.0391                   zw                   1
+zw_112680                         12.0315                   zw                   1
+zw_113040                         12.0242                   zw                   1
+zw_113400                         12.0172                   zw                   1
+zw_113760                         12.0105                   zw                   1
+zw_114120                         12.0041                   zw                   1
+zw_114480                         11.9979                   zw                   1
+zw_114840                         11.9919                   zw                   1
+zw_115200                         11.9863                   zw                   1
+zw_115560                         11.9808                   zw                   1
+zw_115920                         11.9756                   zw                   1
+zw_116280                         11.9705                   zw                   1
+zw_116640                         11.9657                   zw                   1
+zw_117000                         11.9611                   zw                   1
+zw_117360                         11.9567                   zw                   1
+zw_117720                         11.9525                   zw                   1
+zw_118080                         11.9484                   zw                   1
+zw_118440                         11.9445                   zw                   1
+zw_118800                         11.9408                   zw                   1
+zw_119160                         11.9372                   zw                   1
+zw_119520                         11.9338                   zw                   1
+zw_119880                         11.9305                   zw                   1
+zw_120240                         11.9274                   zw                   1
+zw_120600                         11.9244                   zw                   1
+zw_120960                         11.9216                   zw                   1
+zw_121320                         11.9188                   zw                   1
+zw_121680                         11.9162                   zw                   1
+zw_122040                         11.9137                   zw                   1
+zw_122400                         11.9114                   zw                   1
+zw_122760                         11.9091                   zw                   1
+zw_123120                         11.9069                   zw                   1
+zw_123480                         11.9048                   zw                   1
+zw_123840                         11.9029                   zw                   1
+zw_124200                          11.901                   zw                   1
+zw_124560                         11.8992                   zw                   1
+zw_124920                         11.8975                   zw                   1
+zw_125280                         11.8958                   zw                   1
+zw_125640                         11.8943                   zw                   1
+zw_126000                         11.8928                   zw                   1
+zw_126360                         11.8914                   zw                   1
+zw_126720                         11.8901                   zw                   1
+zw_127080                         11.8888                   zw                   1
+zw_127440                         11.8876                   zw                   1
+zw_127800                         11.8865                   zw                   1
+zw_128160                         11.8854                   zw                   1
+zw_128520                         11.8844                   zw                   1
+zw_128880                         11.8834                   zw                   1
+zw_129240                         11.8825                   zw                   1
+zw_129600                         11.8817                   zw                   1
+zw_129960                         11.8809                   zw                   1
+zw_130320                         11.8801                   zw                   1
+zw_130680                         11.8794                   zw                   1
+zw_131040                         11.8787                   zw                   1
+zw_131400                         11.8781                   zw                   1
+zw_131760                         11.8775                   zw                   1
+zw_132120                         11.8769                   zw                   1
+zw_132480                         11.8764                   zw                   1
+zw_132840                         11.8759                   zw                   1
+zw_133200                         11.8755                   zw                   1
+zw_133560                          11.875                   zw                   1
+zw_133920                         11.8747                   zw                   1
+zw_134280                         11.8743                   zw                   1
+zw_134640                          11.874                   zw                   1
+zw_135000                         11.8737                   zw                   1
+zw_135360                         11.8734                   zw                   1
+zw_135720                         11.8731                   zw                   1
+zw_136080                         11.8729                   zw                   1
+zw_136440                         11.8727                   zw                   1
+zw_136800                         11.8725                   zw                   1
+zw_137160                         11.8723                   zw                   1
+zw_137520                         11.8722                   zw                   1
+zw_137880                         11.8721                   zw                   1
+zw_138240                          11.872                   zw                   1
+zw_138600                         11.8719                   zw                   1
+zw_138960                         11.8718                   zw                   1
+zw_139320                         11.8717                   zw                   1
+zw_139680                         11.8717                   zw                   1
+zw_140040                         11.8717                   zw                   1
+zw_140400                         11.8716                   zw                   1
+zw_140760                         11.8716                   zw                   1
+zw_141120                         11.8716                   zw                   1
+zw_141480                         11.8717                   zw                   1
+zw_141840                         11.8717                   zw                   1
+zw_142200                         11.8717                   zw                   1
+zw_142560                         11.8718                   zw                   1
+zw_142920                         11.8718                   zw                   1
+zw_143280                         11.8719                   zw                   1
+zw_143640                          11.872                   zw                   1
+zw_144000                          11.872                   zw                   1
+zw_144360                         11.8721                   zw                   1
+zw_144720                         11.8722                   zw                   1
+zw_145080                         11.8723                   zw                   1
+zw_145440                         11.8724                   zw                   1
+zw_145800                         11.8725                   zw                   1
+zw_146160                         11.8727                   zw                   1
+zw_146520                         11.8728                   zw                   1
+zw_146880                         11.8729                   zw                   1
+zw_147240                         11.8731                   zw                   1
+zw_147600                         11.8732                   zw                   1
+zw_147960                         11.8733                   zw                   1
+zw_148320                         11.8735                   zw                   1
+zw_148680                         11.8736                   zw                   1
+zw_149040                         11.8738                   zw                   1
+zw_149400                          11.874                   zw                   1
+zw_149760                         11.8741                   zw                   1
+zw_150120                         11.8743                   zw                   1
+zw_150480                         11.8744                   zw                   1
+zw_150840                         11.8746                   zw                   1
+zw_151200                         11.8748                   zw                   1
+zw_151560                          11.875                   zw                   1
+zw_151920                         11.8751                   zw                   1
+zw_152280                         11.8753                   zw                   1
+zw_152640                         11.8755                   zw                   1
+zw_153000                         11.8756                   zw                   1
+zw_153360                         11.8758                   zw                   1
+zw_153720                          11.876                   zw                   1
+zw_154080                         11.8762                   zw                   1
+zw_154440                         11.8764                   zw                   1
+zw_154800                         11.8765                   zw                   1
+zw_155160                         11.8767                   zw                   1
+zw_155520                         11.8769                   zw                   1
+zw_155880                          11.877                   zw                   1
+zw_156240                         11.8772                   zw                   1
+zw_156600                         11.8774                   zw                   1
+zw_156960                         11.8776                   zw                   1
+zw_157320                         11.8777                   zw                   1
+zw_157680                         11.8779                   zw                   1
+zw_158040                         11.8781                   zw                   1
+zw_158400                         11.8782                   zw                   1
+zw_158760                         11.8784                   zw                   1
+zw_159120                         11.8786                   zw                   1
+zw_159480                         11.8787                   zw                   1
+zw_159840                         11.8789                   zw                   1
+zw_160200                         11.8791                   zw                   1
+zw_160560                         11.8792                   zw                   1
+zw_160920                         11.8794                   zw                   1
+zw_161280                         11.8795                   zw                   1
+zw_161640                         11.8797                   zw                   1
+zw_162000                         11.8799                   zw                   1
+zw_162360                           11.88                   zw                   1
+zw_162720                         11.8802                   zw                   1
+zw_163080                         11.8803                   zw                   1
+zw_163440                         11.8805                   zw                   1
+zw_163800                         11.8806                   zw                   1
+zw_164160                         11.8808                   zw                   1
+zw_164520                         11.8809                   zw                   1
+zw_164880                         11.8811                   zw                   1
+zw_165240                         11.8812                   zw                   1
+zw_165600                         11.8813                   zw                   1
+zw_165960                         11.8815                   zw                   1
+zw_166320                         11.8816                   zw                   1
+zw_166680                         11.8817                   zw                   1
+zw_167040                         11.8818                   zw                   1
+zw_167400                          11.882                   zw                   1
+zw_167760                         11.8821                   zw                   1
+zw_168120                         11.8822                   zw                   1
+zw_168480                         11.8823                   zw                   1
+zw_168840                         11.8825                   zw                   1
+zw_169200                         11.8826                   zw                   1
+zw_169560                         11.8827                   zw                   1
+zw_169920                         11.8828                   zw                   1
+zw_170280                         11.8829                   zw                   1
+zw_170640                          11.883                   zw                   1
+zw_171000                         11.8831                   zw                   1
+zw_171360                         11.8832                   zw                   1
+zw_171720                         11.8833                   zw                   1
+zw_172080                         11.8834                   zw                   1
+zw_172440                         11.8835                   zw                   1
+zw_172800                         11.8836                   zw                   1
+zw_173160                         11.8837                   zw                   1
+zw_173520                         11.8838                   zw                   1
+zw_173880                         11.8839                   zw                   1
+zw_174240                         11.8839                   zw                   1
+zw_174600                          11.884                   zw                   1
+zw_174960                         11.8841                   zw                   1
+zw_175320                         11.8842                   zw                   1
+zw_175680                         11.8842                   zw                   1
+zw_176040                         11.8843                   zw                   1
+zw_176400                         11.8844                   zw                   1
+zw_176760                         11.8845                   zw                   1
+zw_177120                         11.8845                   zw                   1
+zw_177480                         11.8846                   zw                   1
+zw_177840                         11.8846                   zw                   1
+zw_178200                         11.8847                   zw                   1
+zw_178560                         11.8848                   zw                   1
+zw_178920                         11.8848                   zw                   1
+zw_179280                         11.8849                   zw                   1
+zw_179640                         11.8849                   zw                   1
+zw_180000                          11.885                   zw                   1
+zw_180360                          11.885                   zw                   1
+zw_180720                         11.8851                   zw                   1
+zw_181080                         11.8851                   zw                   1
+zw_181440                         11.8851                   zw                   1
+zw_181800                         11.8852                   zw                   1
+zw_182160                         11.8852                   zw                   1
+zw_182520                         11.8852                   zw                   1
+zw_182880                         11.8853                   zw                   1
+zw_183240                         11.8853                   zw                   1
+zw_183600                         11.8853                   zw                   1
+zw_183960                         11.8853                   zw                   1
+zw_184320                         11.8854                   zw                   1
+zw_184680                         11.8854                   zw                   1
+zw_185040                         11.8854                   zw                   1
+zw_185400                         11.8854                   zw                   1
+zw_185760                         11.8854                   zw                   1
+zw_186120                         11.8855                   zw                   1
+zw_186480                         11.8855                   zw                   1
+zw_186840                         11.8855                   zw                   1
+zw_187200                         11.8855                   zw                   1
+zw_187560                         11.8855                   zw                   1
+zw_187920                         11.8855                   zw                   1
+zw_188280                         11.8855                   zw                   1
+zw_188640                         11.8855                   zw                   1
+zw_189000                         11.8855                   zw                   1
+zw_189360                         11.8855                   zw                   1
+zw_189720                         11.8855                   zw                   1
+zw_190080                         11.8855                   zw                   1
+zw_190440                         11.8855                   zw                   1
+zw_190800                         11.8855                   zw                   1
+
+
+
+Prior information
+
+   no prior information provided
+
+
+
+PEST SVD Information
+    maxsing = 1000000
+    eigthresh = 1e-06
+
+
+
+
+
+
+
+
+Method of Sobol settings:
+ n_sample                     100000
+ sobol par dist               UNIF
+ gsa random seed              1
+
+
+pestpp-sen analysis complete...
+started at 10/12/22 16:51:03
+finished at 10/13/22 00:07:48
+took 4.367500e+02 minutes

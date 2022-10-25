@@ -1,0 +1,10 @@
+ptf $
+ztube(m) 20.8
+zsurf(m) 20.0
+zbot_f(m) $zbot_f          $
+zbot_m(m) 5.0
+rin(m) 0.1
+rout(m) 0.11
+rdrill(m) $rdrill          $
+wdrill(-) $wdrill          $
+DeltaE(coupling_length)(m) $DeltaE          $

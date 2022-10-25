@@ -1,0 +1,12 @@
+parnme,partrans,parchglim,parval1,parlbnd,parubnd,pargp,scale,offset,dercom
+Ksf,log,factor,1.0e-5,5.0e-6,5.0e-3,ks,1.0,0.0,1
+Ksm,log,factor,1.0e-7,1.0e-9,1.0e-6,ks,1.0,0.0,1
+nf,none,relative,2.0,1.2,2.5,n,1.0,0.0,1
+nm,none,relative,2.0,1.2,2.5,n,1.0,0.0,1
+alphaf,none,relative,10.0,2.0,20.0,alpha,1.0,0.0,1
+alpham,none,relative,2.0,0.5,4,alpha,1.0,0.0,1
+zbot_f,none,relative,15.0,5.0,20.0,gzbot_f,1.0,0.0,1
+rdrill,none,relative,0.31,0.21,0.41,grdrill,1.0,0.0,1
+wdrill,none,relative,0.4,0.1,0.45,gwdrill,1.0,0.0,1
+DeltaE,none,relative,0.1,0.01,0.2,gDeltaE,1.0,0.0,1
+epsilon,log,factor,0.00001,0.000001,0.01,gepsilon,1.0,0.0,1

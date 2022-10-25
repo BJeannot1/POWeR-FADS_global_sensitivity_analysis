@@ -1,0 +1,21 @@
+pcf version=2
+* control data keyword
+noptmax 50
+gsa_method sobol
+gsa_morris_r 10
+gsa_morris_p 4
+gsa_sobol_samples 100000
+gsa_sobol_par_dist unif
+max_run_fail                   1
+* parameter groups external
+case.pargp_data.csv
+* parameter data external
+case.par_data.csv
+* observation data external
+case.obs_data.csv
+* model command line
+python3 NIDMOW.py Test_case
+* model input external
+case.tplfile_data.csv
+* model output external
+case.insfile_data.csv

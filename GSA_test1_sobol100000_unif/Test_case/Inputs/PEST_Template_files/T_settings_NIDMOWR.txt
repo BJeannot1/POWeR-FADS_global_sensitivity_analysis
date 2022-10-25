@@ -1,0 +1,7 @@
+ptf $
+nbr_Interp_deltaT 1
+nbr_pts_rect_int_K 10
+niter_max 40
+n_failmax 2
+epsilon $epsilon         $
+AveragingK(0=arithmetic,1=geometric) 0

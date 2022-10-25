@@ -1,0 +1,5 @@
+pest_file,model_file
+Test_case/Inputs/PEST_Template_files/T_params_fractures.txt,Test_case/Inputs/params_fractures.txt
+Test_case/Inputs/PEST_Template_files/T_params_matrix.txt,Test_case/Inputs/params_matrix.txt
+Test_case/Inputs/PEST_Template_files/T_params_well.txt,Test_case/Inputs/params_well.txt
+Test_case/Inputs/PEST_Template_files/T_settings_NIDMOWR.txt,Test_case/Inputs/settings_NIDMOWR.txt

@@ -1,0 +1,10 @@
+pargpnme,inctyp,derinc,derinclb,forcen,derincmul,dermthd,splitthresh,splitreldiff,splitaction,extra
+ks,relative,0.01,0.0,always_3,2.0,outside_pts,1e-05,0.5,smaller,
+n,relative,0.01,0.0,always_3,2.0,outside_pts,1e-05,0.5,smaller,
+alpha,relative,0.01,0.0,always_3,2.0,outside_pts,1e-05,0.5,smaller,
+gzbot_f,relative,0.01,0.0,always_3,2.0,outside_pts,1e-05,0.5,smaller,
+grdrill,relative,0.01,0.0,always_3,2.0,outside_pts,1e-05,0.5,smaller,
+gwdrill,relative,0.01,0.0,always_3,2.0,outside_pts,1e-05,0.5,smaller,
+gDeltaE,relative,0.01,0.0,always_3,2.0,outside_pts,1e-05,0.5,smaller,
+gepsilon,relative,0.01,0.0,always_3,2.0,outside_pts,1e-05,0.5,smaller,
+

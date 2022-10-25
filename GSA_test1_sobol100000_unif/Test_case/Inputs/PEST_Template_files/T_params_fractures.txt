@@ -1,0 +1,5 @@
+ptf $
+Ks(m/s) $Ksf            $
+n(-) $nf              $
+alpha(/m) $alphaf          $
+K_unsat_mini(m/s) 1.0e-15
