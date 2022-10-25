@@ -1,8 +1,8 @@
-# Global sensitivity analysis for POWeR-FADS (Program for Observation Well Representation in Fractured Aquifer Dual-continuum Simulations)
+# Global sensitivity analysis for the Program for Observation Well Representation in Fractured Aquifer Dual-continuum Simulations
 
 ***Introduction***
 
-This repository hosts the inputs and outptus relating to the global sensitivity analysis (GSA) performed for the POWeR-FADS model, presented in Jeannot et al.(submitted). This GSA is undertaken by the method of Sobol(2001), as implemented in PESTPP-SEN (White et al., 2020), and uses 100000 uniformly distributed parameters samples. For more details, refer to Jeannot et al.(submitted).
+This repository hosts the inputs and outptus relating to the global sensitivity analysis (GSA) performed for the Program for Observation Well Representation in Fractured Aquifer Dual-continuum Simulations (POWeR-FADS), presented in Jeannot et al.(submitted). This GSA is undertaken by the method of Sobol(2001), as implemented in PESTPP-SEN (White et al., 2020), and uses 100000 uniformly distributed parameters samples. For more details, refer to Jeannot et al.(submitted).
 
 The folders GSA_test1_sobol100000_unif and GSA_test2_sobol100000_unif refer to a GSA undertaken respectively for synthetic test cases 1 and 2, as detailed in Jeannot et al.(submitted). In each of these subfolders, the GSA can be launched by opening a linux terminal and passing the following command: ./pestpp-sen case.pst
 However, please note that in practice, the costly computation time of the GSA requires to use PESTPP-SEN in parallel for achieving an acceptable computation time for this simulation. For more details on the parallel implementation of PESTPP-SEN, please refer to White et al.(2020)
