@@ -1,4 +1,4 @@
-# Global sensitivity analysis for the Program for Observation Well Representation in Fractured Aquifer Dual-continuum Simulations
+# Global Sensitivity Analysis for the Program for Observation Well Representation in Fractured Aquifer Dual-continuum Simulations
 
 ***Introduction***
 
